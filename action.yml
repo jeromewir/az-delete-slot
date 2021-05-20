@@ -1,11 +1,29 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: "Azure delete slot"
+description: "Delete a slot for a given webapp on Azure"
+author: "wirszt_j"
 inputs:
-  milliseconds: # change this
+  slotName:
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+    description: The name of the slot
+  subscriptionID:
+    required: true
+    description: ID of the azure subscription
+  ressourceGroup:
+    required: true
+    description: Ressource groupe where the app is hosted
+  appName:
+    required: true
+    description: Name of the web app where the slot will be created
+  clientID:
+    required: true
+    description: Service account clientID
+  applicationSecret:
+    required: true
+    description: Service account secret
+  tenantID:
+    required: true
+    description: ID of the tenant for the azure subscription
+
 runs:
-  using: 'node12'
-  main: 'dist/index.js'
+  using: "node12"
+  main: "dist/index.js"
